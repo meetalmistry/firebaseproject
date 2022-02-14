@@ -20,12 +20,14 @@ function Homepage() {
         };
     }, []);
 
+    /*
     const onDelete = (id) => {
         if (window.confirm("Are you sure ?")
         ) {
             fireDb.child(`Products/${id}`).remove();
         }
     };
+    */
 
     function Card(props){
         return(

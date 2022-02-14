@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import fireDb from "../firebase";
-import {useNavigate, useParams, Link} from "react-router-dom";
+import {useParams, Link} from "react-router-dom";
 import './View.css';
 
 const View = () => {
