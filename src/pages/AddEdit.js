@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import {useNavigate, useParams} from "react-router-dom";
-
 import './AddEdit.css';
 import fireDb from "../firebase";
 
@@ -9,14 +8,15 @@ const initialState = {
     price:"",
     stars:"",
     rating:"",
-    reviews:""
+    reviews:"",
+    productDescription:""
 }
 
 const AddEdit = () => {
     const [state, setState] = useState(initialState);
     const [data, setData] = useState({});
     
-    const {productTitle, price, stars, rating, reviews} = state;
+    const {productTitle, productDescription, price, stars, rating, reviews} = state;
     const navigate = useNavigate();
     const {id} = useParams();
 
@@ -53,7 +53,7 @@ const AddEdit = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if(!productTitle || !price || !stars || !rating || !reviews){
+        if(!productTitle || productDescription || !price || !stars || !rating || !reviews){
             console.error("Please provide values in each input field")
         } else {
             if (!id) {
@@ -94,6 +94,15 @@ const AddEdit = () => {
         name="productTitle"
         placeholder='Enter Product Title'
         value={productTitle || ""}
+        onChange={handleInputChange}
+        />
+        <label htmlFor='productDescription'>Product Title</label>
+        <input  
+        type="text"
+        id="productDescription"
+        name="productDescription"
+        placeholder='Enter Product Description'
+        value={productDescription || ""}
         onChange={handleInputChange}
         />
         <label htmlFor='price'>Product Price</label>

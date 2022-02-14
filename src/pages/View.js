@@ -38,6 +38,12 @@ const View = () => {
             <br />
         </div>
         <div className='container'>
+            <strong>Product Description:</strong>
+            <span>{user.productDescription}</span>
+            <br />
+            <br />
+        </div>
+        <div className='container'>
             <strong>Price:</strong>
             <span>{user.price}</span>
             <br />
