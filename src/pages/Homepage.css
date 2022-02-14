@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
+
+*,
+*::before,
+*::after {
+    border: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: Oxygen, sans-serif;
+    margin: 2rem;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12rem,16rem));
+    justify-content: center;
+}
+
+.card{
+    width: auto;
+    overflow: hidden;
+    box-shadow: 0 2px 20px grey;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: transform 200ms ease-in;
+    margin: 5px;
+}
+
+.card:hover{
+     transform: scale(1.02);   
+}
+
+.card:hover .card__btn {
+    background: rgba(212, 18, 18, 0.842);
+    color: white;
+}
+
+.card__img {
+    height: 12rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.card__title {
+    padding: 1rem;
+    text-align: center;
+} 
+
+.card__description {
+    padding: 0 1 rem;
+}
+
+.card__btn {
+    padding: 1rem;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 1rem;
+    margin: 1rem;
+    border: 2px solid lightcoral;
+    background: transparent;
+    color: lightcoral;
+    border-radius: 0.5rem;
+    transition:color 200ms ease-in;
+}
