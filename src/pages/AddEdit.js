@@ -3,8 +3,6 @@ import {useNavigate, useParams} from "react-router-dom";
 
 import './AddEdit.css';
 import fireDb from "../firebase";
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 const initialState = {
     productTitle:"",
@@ -56,22 +54,22 @@ const AddEdit = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if(!productTitle || !price || !stars || !rating || !reviews){
-            toast.error("Please provide values in each input field")
+            console.error("Please provide values in each input field")
         } else {
             if (!id) {
                 fireDb.child("Products").push(state, (err) => {
                     if(err) {
-                        toast.error(err);
+                        console.error(err);
                     } else {
-                        toast.success("Product Added Successfully");
+                        console.success("Product Added Successfully");
                     }
                 });
             } else {
                 fireDb.child(`Products/${id}`).set(state, (err) => {
                     if(err) {
-                        toast.error(err);
+                        console.error(err);
                     } else {
-                        toast.success("Product Updated Successfully");
+                        console.success("Product Updated Successfully");
                     }
                 });
             }
